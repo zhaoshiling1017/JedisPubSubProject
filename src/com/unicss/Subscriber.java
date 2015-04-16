@@ -26,21 +26,21 @@ public class Subscriber extends JedisPubSub {
 
     @Override
     public void onSubscribe(String channel, int subscribedChannels) {
-
+    	logger.info(String.format("[%s]: channel<%s>, subscribedChannels<%s>","onPSubscribe",channel,subscribedChannels));
     }
 
     @Override
     public void onUnsubscribe(String channel, int subscribedChannels) {
-
+    	logger.info(String.format("onUnsubscribe::Message received. Channel: %s, subscribedChannels: %s", channel, subscribedChannels));
     }
 
     @Override
     public void onPUnsubscribe(String pattern, int subscribedChannels) {
-
+    	logger.info(String.format("onPUnsubscribe::Message received. Channel: %s, subscribedChannels: %s", pattern, subscribedChannels));
     }
 
     @Override
     public void onPSubscribe(String pattern, int subscribedChannels) {
-
+    	logger.info(String.format("[%s]: channel<%s>, subscribedChannels<%s>","onPSubscribe",pattern,subscribedChannels));
     }
 }
